@@ -8,6 +8,11 @@ output reg [31:0]ReadData
 
 reg [31:0]mem[0:31];
 
+initial
+begin
+	$readmemb("Memoria.txt",mem);
+end
+
 always @* begin
 	if(MemToRead)
 		ReadData=mem[Address[6:2]];
